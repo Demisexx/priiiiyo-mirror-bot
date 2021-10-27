@@ -47,9 +47,7 @@ def stats(update, context):
             f'<b><i>CPU</i></b>: {cpuUsage}%\n' \
             f'<b><i>RAM</i></b>: {memory}%\n' \
             f'<b><i>DISK</i></b>: {disk}%\n'
-    keyboard = [[InlineKeyboardButton("CLOSE", callback_data="stats_close")]]
-    main = sendMarkup(stats, context.bot, update, reply_markup=InlineKeyboardMarkup(keyboard))
-
+    sendMessage(stats, context.bot, update)
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
